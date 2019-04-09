@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtMd5Sum = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,6 +45,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtTestResult = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.lblStopwatch = new System.Windows.Forms.Label();
+            this.lblTimer = new System.Windows.Forms.Label();
+            this.tmrComputationTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // textBox1
@@ -182,11 +186,36 @@
             this.label5.TabIndex = 16;
             this.label5.Text = "* should return 0";
             // 
+            // lblStopwatch
+            // 
+            this.lblStopwatch.AutoSize = true;
+            this.lblStopwatch.Location = new System.Drawing.Point(330, 74);
+            this.lblStopwatch.Name = "lblStopwatch";
+            this.lblStopwatch.Size = new System.Drawing.Size(49, 13);
+            this.lblStopwatch.TabIndex = 17;
+            this.lblStopwatch.Text = "00:00:00";
+            // 
+            // lblTimer
+            // 
+            this.lblTimer.AutoSize = true;
+            this.lblTimer.Location = new System.Drawing.Point(225, 74);
+            this.lblTimer.Name = "lblTimer";
+            this.lblTimer.Size = new System.Drawing.Size(67, 13);
+            this.lblTimer.TabIndex = 18;
+            this.lblTimer.Text = "Elapsed time";
+            // 
+            // tmrComputationTimer
+            // 
+            this.tmrComputationTimer.Interval = 1000;
+            this.tmrComputationTimer.Tick += new System.EventHandler(this.tmrComputationTimer_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblTimer);
+            this.Controls.Add(this.lblStopwatch);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtTestResult);
             this.Controls.Add(this.label4);
@@ -228,6 +257,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtTestResult;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblStopwatch;
+        private System.Windows.Forms.Label lblTimer;
+        private System.Windows.Forms.Timer tmrComputationTimer;
     }
 }
 

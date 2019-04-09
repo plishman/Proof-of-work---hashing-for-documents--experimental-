@@ -16,6 +16,7 @@ namespace powapptest
     public partial class Form1 : Form
     {
         private string texttoprocess = "";
+        private ulong secondselapsed = 0;
 
         public Form1()
         {
@@ -51,7 +52,10 @@ namespace powapptest
 
         private void btnFind_Click(object sender, EventArgs e)
         {
+            ResetTimerDisplay();
+            tmrComputationTimer.Start();
             doProofOfWork(texttoprocess);
+            tmrComputationTimer.Stop();
         }
 
         private void doProofOfWork(string text)
@@ -79,6 +83,8 @@ namespace powapptest
             while (bigintMd5Sum % modulo != 0)
             {
                 count++;
+
+                if (count % 100 == 0) Application.DoEvents();
 
                 currtext = text;
                 salt_num++;
@@ -122,5 +128,29 @@ namespace powapptest
         {
             doProofOfWorkTest(textBox1.Text);
         }
+
+        private void tmrComputationTimer_Tick(object sender, EventArgs e)
+        {
+            secondselapsed++;
+            SetTimerDisplay();
+            tmrComputationTimer.Start();
+        }
+
+        private void ResetTimerDisplay()
+        {
+            tmrComputationTimer.Stop();
+            tmrComputationTimer.Interval = 1000;
+            secondselapsed = 0;
+            SetTimerDisplay();
+        }
+
+        private void SetTimerDisplay()
+        {
+            ulong hours = secondselapsed / 3600;
+            ulong minutes = (secondselapsed / 60) % 60;
+            ulong seconds = secondselapsed % 60;
+            lblStopwatch.Text = string.Format("{0}:{1}:{2}",hours.ToString("000"), minutes.ToString("00"), seconds.ToString("00"));
+        }
+
     }
 }
