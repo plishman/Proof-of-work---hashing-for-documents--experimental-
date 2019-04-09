@@ -14,7 +14,7 @@ Since this computation can only be carried out by brute force search, higher mod
 ## A Solution to Fake News
 This proof of work approach can be applied to real world news articles, to distinguish ephemeral commentary from works of significant resources and effort.
 
-If an author stands by his work and has put great effort into producing it, hopefully he will be motivated to prove this by using a proof of work such as this. The more computation time (and therefore money) he is prepared to put into computing the proof of work, the more seriously he takes the work he has published.
+If an author stands by his work and has put great effort into producing it, hopefully he will be motivated to prove this by using a proof of work such as this. The more computation time (and therefore money) he is prepared to put into computing the proof of work, the more seriously he likely takes the work he has published.
 
 The author (or anyone else) cannot retrospectively alter the work without recomputing the proof of work hash, and in any case, such recomputation would be detectable since it would alter the intelligible text string added to the document to make the hash value have the required characteristics.
 
