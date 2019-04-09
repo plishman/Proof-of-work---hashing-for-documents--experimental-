@@ -1,5 +1,7 @@
 # Proof of work - hashing for documents (experimental) - A suggested solution to fake news.
 
+![Preview1](./gui.png)
+
 <h2>Purpose</h2>
 The purpose of this experimental program is to test the feasability of computing a salt string to add to any document which, when appended to the document, results in an MD5 hash having certain numerical characteristics - namely, that it should be exactly divisible by a user-selectable value.
 
