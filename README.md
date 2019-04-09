@@ -3,7 +3,7 @@
 ![Preview1](./pow.png)
 
 ## Purpose
-The purpose of this experimental program is to test the feasability of computing a salt string to add to any document which, when appended to the document, results in an MD5 hash having certain numerical characteristics - namely, that it should be exactly divisible by a user-selectable value.
+The purpose of this experimental program is to test the feasability of computing a salt string to add to any document which, when appended to the document, results in the document having an MD5 hash with certain numerical characteristics - namely, that it should be exactly divisible by a user-selectable value.
 
 This program creates an MD5 hash of a text which is exactly divisible by a user-selected value. The higher the value, the longer the computation takes.
 
