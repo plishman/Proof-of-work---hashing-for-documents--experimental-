@@ -5,7 +5,7 @@
 <h2>Purpose</h2>
 The purpose of this experimental program is to test the feasability of computing a salt string to add to any document which, when appended to the document, results in an MD5 hash having certain numerical characteristics - namely, that it should be exactly divisible by a user-selectable value.
 
-This program creates an MD5 hash of a text which is exactly divisible by a user-selected value.
+This program creates an MD5 hash of a text which is exactly divisible by a user-selected value. The higher the value, the longer the computation takes.
 
 The program searches for an intelligible text string to append to the document to modify the document's MD5 hash such that the result of dividing the computed MD5 hash number by the user-selectable modulo is 0.
 
