@@ -1,0 +1,39 @@
+
+body.pow-calculator .highlight-pow {
+	background: #fedcba;
+}
+
+body.pow-calculator .pow-article-content {
+	border-top: 20px solid #dcba98;
+	border-radius: 7px 7px 0px 0px;
+}
+
+body.pow-calculator #get-pow-mod-form {
+	background: #abcdef;
+}
+
+
+body.pow-calculator .pow-form-container {
+	width: 100%;
+	padding: 5%;
+}
+
+body.pow-calculator .pow_form_label {
+}
+
+body.pow-calculator .pow_form_inputs {
+}
+
+body.pow-calculator #p_modulo {
+  width: 90%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+body.pow-calculator #p_output {
+  width: 90%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}

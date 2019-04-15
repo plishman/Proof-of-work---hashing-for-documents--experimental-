@@ -1,0 +1,15 @@
+.pow-calc-test-failed {
+	background: red;
+	color: white;
+	padding-left: 4px;
+	padding-right: 4px;
+	text-align: center;
+}
+
+.pow-calc-test-passed {
+	background: green;
+	color: white;
+	padding-left: 4px;
+	padding-right: 4px;
+	text-align: center;
+}
