@@ -29,8 +29,8 @@ This extension detects salt value/modulo strings in webpages and tests if they a
 In the case a proof of work salt value/modulo string is detected to be invalid (ie, the computed MD5 hash for the element contents does not divide by the selected modulo value), a red warning question mark is displayed instead of a score.
 
 ## Example images
-![Preview2]("./chrome extensions/proof of work 1.png")
+![Preview2](./chrome extensions/proof of work 1.png)
 
-![Preview3]("./chrome extensions/proof of work 2.png")
+![Preview3](./chrome extensions/proof of work 2.png)
 
-![Preview4]("./chrome extensions/proof of work 3.png")
+![Preview4](./chrome extensions/proof of work 3.png)
