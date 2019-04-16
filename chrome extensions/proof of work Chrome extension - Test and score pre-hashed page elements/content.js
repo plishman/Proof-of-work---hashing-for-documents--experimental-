@@ -4,7 +4,10 @@ window.addEventListener("powCalculateRequestMsg", function(data) {
   validate_pow();
 }, false);
 
-$('document').ready(function() {validate_pow();});
+$('document').ready(function() {
+	$('body').addClass('pow-display-scores');
+	validate_pow();
+});
 
 function validate_pow() {
 	const pow_salt_score_notfound = "?";

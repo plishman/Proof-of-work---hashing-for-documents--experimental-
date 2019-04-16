@@ -65,3 +65,19 @@ body.pow-calculator #p_hashtime {
 body.pow-calculator #p_hashcount {
   text-align: right;
 }
+
+body.pow-display-scores .pow-calc-test-failed {
+	background: red;
+	color: white;
+	padding-left: 4px;
+	padding-right: 4px;
+	text-align: center;
+}
+
+body.pow-display-scores .pow-calc-test-passed {
+	background: green;
+	color: white;
+	padding-left: 4px;
+	padding-right: 4px;
+	text-align: center;
+}

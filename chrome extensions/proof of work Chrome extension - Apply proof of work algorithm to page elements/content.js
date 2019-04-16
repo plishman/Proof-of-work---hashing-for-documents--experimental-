@@ -7,6 +7,9 @@ function EnablePow(){
 	if (bPowIsEnabled) {
 		$('form#get-pow-mod-form').remove();
 		$('body').removeClass('pow-calculator');
+		$('.pow-class').children().remove();
+		
+		window.dispatchEvent(new CustomEvent("powCalculateRequestMsg", {data: 'validate_pow'})); //get the scoring extension to redisplay scores if it is present, otherwise, do not show scores when the proof of work calculator is closed
 		bPowIsEnabled = false;
 	}
 	else {
@@ -14,8 +17,11 @@ function EnablePow(){
 		$('body').prepend("<form id='get-pow-mod-form' class='get-pow-mod-form-class'><div class='pow-form-container'><h2>Proof of Work hashing for html document elements</h2><div class='pow_form_label'><label for='p_modulo'>Enter Modulo</label></div><div class='pow-form-inputs'><input type='number' id='p_modulo' value='10' min='10'/></div><div class='pow-form-label'><label for='p_output'>hashed html output</label></div><div class='pow-form-inputs'><textarea id='p_output' rows='10' cols='100'>hashed html output</textarea></div><div class='pow-form-label'><label for='p_md5sum'>MD5 hash</label></div><div class='pow-form-inputs'><input type='text' id='p_md5sum' value='calculated MD5 hash'/><span class='pow-form-clocks' id='p_hashtime'>elapsed time</span><span id='p_clocks_separator' class='pow-form-clocks'>/</span><span class='pow-form-clocks' id='p_hashcount'>number of hashes</span></div></div></form>");
 		
 		$('body').addClass('pow-calculator');
+		$('body').addClass('pow-display-scores');
 
-		window.dispatchEvent(new CustomEvent("powCalculateRequestMsg", {data: 'validate_pow'}));	  
+		//window.dispatchEvent(new CustomEvent("powCalculateRequestMsg", {data: 'validate_pow'}));	  
+		validate_pow();
+		
 		bPowIsEnabled = true;
 	}
 }
@@ -94,6 +100,54 @@ function pad(num, size) {
     return s;
 }
 
+function validate_pow() {
+	const pow_salt_score_notfound = "?";
+
+	$("span.pow-class").each(function(index) {
+		$(this).children().remove();
+
+		var pow_salt = $(this).attr('pow-salt');
+		var pow_mod = $(this).attr('pow-mod');
+
+		var pow_salt_score = pow_salt_score_notfound;
+
+		if (!isNaN(pow_salt) && !isNaN(pow_mod)) {
+			var pow_salt_n = BigInt(pow_salt);
+			var pow_mod_n = BigInt(pow_mod);
+								
+			if (pow_mod_n > 0) {
+				var el = $(this).parent();
+				var htmltext = $(el).html();
+				var hashtext = hex_md5(htmltext);
+				var hash = BigInt('0x' + hashtext);
+				if (hash % pow_mod_n == BigInt('0')) {
+					// hash is exactly divisible by pow_mod_n -> hashed ok
+					if (pow_salt_n == 0) {
+						pow_salt_score = "0.0";
+					}
+					else {
+						pow_salt_score = (Math.log10(parseInt(pow_salt_n))).toFixed(1).toString();
+					}
+				}
+				else {
+					// hash is not divisible by pow_mod_n -> test failed
+				}
+			}
+		}
+		
+		var score = $('<span>' + pow_salt_score + '</span>');
+		
+		if (pow_salt_score == pow_salt_score_notfound) {
+			score.addClass("pow-calc-test-failed");
+		}
+		else {
+			score.addClass("pow-calc-test-passed");
+		}
+
+		score.appendTo($(this));
+	});
+}
+
 $('.pow-article-content').mouseenter(function(event) {
 	if (!bPowIsEnabled) {
 		$(this).off("mouseenter");
@@ -127,7 +181,8 @@ $('.pow-article-content').mouseenter(function(event) {
 		}
 		event.stopImmediatePropagation();
 		await calculate_pow(this, pow_mod);
-		window.dispatchEvent(new CustomEvent("powCalculateRequestMsg", {data: 'validate_pow'}));
+		//window.dispatchEvent(new CustomEvent("powCalculateRequestMsg", {data: 'validate_pow'}));
+		validate_pow();
 		
 		$(this).removeClass('highlight-pow-running');
 		hash_already_running = false;
