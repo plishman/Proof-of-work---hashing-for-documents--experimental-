@@ -19,6 +19,8 @@ If an author stands by his work and has put great effort into producing it, hope
 The author (or anyone else) cannot retrospectively alter the work without recomputing the proof of work hash, and in any case, such recomputation would be detectable since it would alter the intelligible text string added to the document to make the hash value have the required characteristics.
 
 # Two new extensions for Chrome to prove the concept
+![Preview2](<./chrome extensions/proof of work 4.png>)
+
 I have added two extensions for Chrome: 
 ## proof of work Chrome extension - Apply proof of work algorithm to page elements
 This extension allows page elements to be hashed and the salt value/modulo string to be computed. The computed string is appended to the article in a span tag.
@@ -29,8 +31,8 @@ This extension detects salt value/modulo strings in webpages and tests if they a
 In the case a proof of work salt value/modulo string is detected to be invalid (ie, the computed MD5 hash for the element contents does not divide by the selected modulo value), a red warning question mark is displayed instead of a score.
 
 ## Example images
-![Preview2](<./chrome extensions/proof of work 1.png>)
+![Preview3](<./chrome extensions/proof of work 1.png>)
 
-![Preview3](<./chrome extensions/proof of work 2.png>)
+![Preview4](<./chrome extensions/proof of work 2.png>)
 
-![Preview4](<./chrome extensions/proof of work 3.png>)
+![Preview5](<./chrome extensions/proof of work 3.png>)
