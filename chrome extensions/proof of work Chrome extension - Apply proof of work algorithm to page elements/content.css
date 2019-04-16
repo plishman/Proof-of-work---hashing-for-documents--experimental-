@@ -8,32 +8,60 @@ body.pow-calculator .pow-article-content {
 	border-radius: 7px 7px 0px 0px;
 }
 
+body.pow-calculator .highlight-pow-running {
+	border-top: 20px solid #804020;
+	border-radius: 7px 7px 0px 0px;
+	background: #876543;	
+}
+
 body.pow-calculator #get-pow-mod-form {
 	background: #abcdef;
 }
 
 
 body.pow-calculator .pow-form-container {
-	width: 100%;
+	/*width: 100%;*/
 	padding: 5%;
 }
 
-body.pow-calculator .pow_form_label {
+body.pow-calculator .pow-form-label {
 }
 
-body.pow-calculator .pow_form_inputs {
+body.pow-calculator .pow-form-inputs {
 }
 
 body.pow-calculator #p_modulo {
-  width: 90%;
+  width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
 }
 
 body.pow-calculator #p_output {
-  width: 90%;
+  width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
+}
+
+body.pow-calculator #p_md5sum {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+body.pow-calculator .pow-form-clocks {
+  float: right;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;	
+}
+
+body.pow-calculator #p_hashtime {
+  text-align: left;
+}
+
+body.pow-calculator #p_hashcount {
+  text-align: right;
 }
