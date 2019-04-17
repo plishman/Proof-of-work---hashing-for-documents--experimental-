@@ -14,8 +14,45 @@ function EnablePow(){
 	}
 	else {
 		$('form#get-pow-mod-form').remove();
-		$('body').prepend("<form id='get-pow-mod-form' class='get-pow-mod-form-class'><div class='pow-form-container'><h2>Proof of Work hashing for html document elements</h2><div class='pow_form_label'><label for='p_modulo'>Enter Modulo</label></div><div class='pow-form-inputs'><input type='number' id='p_modulo' value='10' min='10'/></div><div class='pow-form-label'><label for='p_output'>hashed html output</label></div><div class='pow-form-inputs'><textarea id='p_output' rows='10' cols='100'>hashed html output</textarea></div><div class='pow-form-label'><label for='p_md5sum'>MD5 hash</label></div><div class='pow-form-inputs'><input type='text' id='p_md5sum' value='calculated MD5 hash'/><span class='pow-form-clocks' id='p_hashtime'>elapsed time</span><span id='p_clocks_separator' class='pow-form-clocks'>/</span><span class='pow-form-clocks' id='p_hashcount'>number of hashes</span></div></div></form>");
+		html = `<form id='get-pow-mod-form' class='get-pow-mod-form-class'>
+					<div class='pow-form-container'>
+						<h2>Proof of Work hashing for html document elements</h2>
+						<div class='pow_form_label'>
+							<label for='p_modulo'>Enter Modulo</label>
+						</div>
+						<div class='pow-form-inputs'>
+							<input type='number' id='p_modulo' value='10' min='10'/>
+						</div>
+						<div class='pow-form-label'>
+							<label for='p_output'>hashed html output</label>
+						</div>
+						<div class='pow-form-inputs'>
+							<textarea id='p_output' rows='10' cols='100'>hashed html output</textarea>
+						</div>
+						<div class='pow-form-label'>
+							<label for='p_md5sum'>MD5 hash</label>
+						</div>
+						<div class='pow-form-inputs'>
+							<input type='text' id='p_md5sum' value='calculated MD5 hash'/>
+							<div class='pow-form-clocks-container-div'>
+								<div class='pow-form-clocks-div'>
+									<span class='pow-form-clocks'>elapsed time</span>
+									<span class='pow-form-clocks-sep'>/</span>
+									<span class='pow-form-clocks'>number of hashes</span>
+								</div>
+								<div class='pow-form-clocks-div'>
+									<span class='pow-form-clocks' id='p_hashtime'>000:00:00</span>
+									<span class='pow-form-clocks-sep'>/</span>
+									<span class='pow-form-clocks' id='p_hashcount'>0</span>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</form>`;
 		
+		$('body').prepend(html);
+			
 		$('body').addClass('pow-calculator');
 		$('body').addClass('pow-display-scores');
 

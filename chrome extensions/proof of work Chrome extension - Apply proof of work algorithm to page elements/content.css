@@ -1,6 +1,7 @@
 
 body.pow-calculator .highlight-pow {
 	background: #fedcba;
+	z-index: -1;
 }
 
 body.pow-calculator .pow-article-content {
@@ -12,6 +13,7 @@ body.pow-calculator .highlight-pow-running {
 	border-top: 20px solid #804020;
 	border-radius: 7px 7px 0px 0px;
 	background: #876543;	
+	z-index: -1;
 }
 
 body.pow-calculator #get-pow-mod-form {
@@ -52,18 +54,36 @@ body.pow-calculator #p_md5sum {
 }
 
 body.pow-calculator .pow-form-clocks {
-  float: right;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;	
+  padding: 3px 5px;
+  width: 40%;
+  margin: 2px 0;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+body.pow-calculator .pow-form-clocks-sep {
+	padding: 3px 5px;
+	width: 10%;
+	margin: 2px 0;
+	display: inline-block;
+	box-sizing: border-box;
+}
+
+body.pow-calculator .pow-form-clocks-container-div {
+	width: 40%;
+	float: right;
+}
+
+body.pow-calculator .pow-form-clocks-div {
+	background: rgba(0,0,0,0.1);
+	width: 100%;
+	float: right;
 }
 
 body.pow-calculator #p_hashtime {
-  text-align: left;
 }
 
 body.pow-calculator #p_hashcount {
-  text-align: right;
 }
 
 body.pow-display-scores .pow-calc-test-failed {
