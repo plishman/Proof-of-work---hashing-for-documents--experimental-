@@ -1,5 +1,6 @@
 {
-  "name": "Proof of work",
+  "name": "Proof of work - Test and Score HTML documents",
+  "short_name" : "POW Scoring",
   "description": "Test and score page elements having proof of work hash information",
   "version": "0.1",
   "permissions": [

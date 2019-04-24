@@ -1,5 +1,6 @@
 {
-  "name": "Proof of work",
+  "name": "Proof of work hashing for HTML documents",
+  "short_name" : "Proof of work",
   "description": "Apply proof of work algorithm to page elements",
   "version": "0.1",
   "permissions": [

@@ -1,0 +1,7 @@
+Privacy policy for Philip Lishman's Chrome Extensions
+
+The User should observe the extension permissions contained in each extension's manifest.json file, and notified at installation time.
+
+No data is kept on any server controlled by the Author by any extension published here.
+
+17 April 2019
