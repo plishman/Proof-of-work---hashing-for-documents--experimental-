@@ -34,7 +34,7 @@ The author (or anyone else) cannot retrospectively alter the work without recomp
 I have added two extensions for Chrome: 
 ## proof of work Chrome extension - Apply proof of work algorithm to page elements
 https://chrome.google.com/webstore/detail/proof-of-work-hashing-for/gofmdhjamblgjaoeilnaneidlneibgbp
-This extension allows page elements to be hashed and the salt value/modulo string to be computed. The computed string is appended to the article in a span tag.
+This extension allows page elements to be hashed and the salt value/modulo string to be computed. The computed string is appended to the hashed page element in a span tag.
 
 ## proof of work Chrome extension - Test and score pre-hashed page elements
 https://chrome.google.com/webstore/detail/proof-of-work-test-and-sc/fimdnbeniijbdkindeaoddfcaadgccoj
