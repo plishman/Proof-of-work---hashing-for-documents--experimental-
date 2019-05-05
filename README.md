@@ -1,8 +1,17 @@
 # Proof of work - hashing for documents (experimental) - A suggested solution to fake news.
 
+## Chrome Extensions
+These are working proof of concept extensions for Chrome (and compatible browsers) which (i) allow proof of work hashing of the contents of html tags in html documents, and (ii) scoring of pre-hashed document elements.
+### (i) Proof of work hashing for HTML documents chrome extension - 
+https://chrome.google.com/webstore/detail/proof-of-work-hashing-for/gofmdhjamblgjaoeilnaneidlneibgbp
+### (ii) Proof of work - Test and Score HTML documents chrome extension - 
+https://chrome.google.com/webstore/detail/proof-of-work-test-and-sc/fimdnbeniijbdkindeaoddfcaadgccoj
+
+
+## Experimental program in C#
 ![Preview1](./pow.png)
 
-## Purpose
+### Purpose
 The purpose of this experimental program is to test the feasability of computing a salt string to add to any document which, when appended to the document, results in the document having an MD5 hash with certain numerical characteristics - namely, that it should be exactly divisible by a user-selectable value.
 
 This program creates an MD5 hash of a text which is exactly divisible by a user-selected value. The higher the value, the longer the computation takes.
@@ -11,7 +20,7 @@ The program searches for an intelligible text string to append to the document t
 
 Since this computation can only be carried out by brute force search, higher modulo values result in longer computation times, which cannot be avoided. Thus this computation constitutes a proof of work.
 
-## A Solution to Fake News
+### A Solution to Fake News
 This proof of work approach can be applied to real world news articles, to distinguish ephemeral commentary from works of significant resources and effort.
 
 If an author stands by his work and has put great effort into producing it, hopefully he will be motivated to prove this by using a proof of work such as this. The more computation time (and therefore money) he is prepared to put into computing the proof of work, the more seriously he likely takes the work he has published.
