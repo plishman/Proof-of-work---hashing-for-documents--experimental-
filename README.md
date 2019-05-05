@@ -7,6 +7,7 @@ https://chrome.google.com/webstore/detail/proof-of-work-hashing-for/gofmdhjamblg
 ### (ii) Proof of work - Test and Score HTML documents chrome extension - 
 https://chrome.google.com/webstore/detail/proof-of-work-test-and-sc/fimdnbeniijbdkindeaoddfcaadgccoj
 
+See the sections below "Two new extensions for Chrome to prove the concept" for details of how to use the extensions.
 
 ## Experimental program in C#
 ![Preview1](./pow.png)
@@ -32,9 +33,11 @@ The author (or anyone else) cannot retrospectively alter the work without recomp
 
 I have added two extensions for Chrome: 
 ## proof of work Chrome extension - Apply proof of work algorithm to page elements
+https://chrome.google.com/webstore/detail/proof-of-work-hashing-for/gofmdhjamblgjaoeilnaneidlneibgbp
 This extension allows page elements to be hashed and the salt value/modulo string to be computed. The computed string is appended to the article in a span tag.
 
 ## proof of work Chrome extension - Test and score pre-hashed page elements
+https://chrome.google.com/webstore/detail/proof-of-work-test-and-sc/fimdnbeniijbdkindeaoddfcaadgccoj
 This extension detects salt value/modulo strings in webpages and tests if they are valid (ie, that they represent a valid proof of work). If a valid string is detected, a score is displayed. The score is log10(number of iterations to find conformal MD5 hash number). This means that values above about 6 or 7 indicate significant proofs of work have been performed.
 
 In the case a proof of work salt value/modulo string is detected to be invalid (ie, the computed MD5 hash for the element contents does not divide by the selected modulo value), a red warning question mark is displayed instead of a score.
